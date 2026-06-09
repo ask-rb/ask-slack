@@ -1,0 +1,84 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://slack.com/api/auth.test
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Slack Ruby Client/3.1.0
+      Accept:
+      - application/json; charset=utf-8
+      Authorization:
+      - Bearer <SLACK_TOKEN>
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 09 Jun 2026 21:17:02 GMT
+      Server:
+      - Apache
+      Vary:
+      - Accept-Encoding
+      X-Slack-Req-Id:
+      - dee7609c2ac4a1b221b92072e1d1d128
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - '0'
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Expires:
+      - Sat, 26 Jul 1997 05:00:00 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Oauth-Scopes:
+      - app_mentions:read,chat:write,chat:write.public,channels:history,groups:history,im:history,team:read
+      Access-Control-Expose-Headers:
+      - x-slack-req-id, retry-after
+      Access-Control-Allow-Headers:
+      - slack-route, x-slack-version-ts, x-b3-traceid, x-b3-spanid, x-b3-parentspanid,
+        x-b3-sampled, x-b3-flags, x-background
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Referrer-Policy:
+      - no-referrer
+      X-Slack-Unique-Id:
+      - aiiCzsorfvxTNTAm1XwbegAAACw
+      Access-Control-Allow-Origin:
+      - "*"
+      Via:
+      - 1.1 slack-prod.tinyspeck.com, envoy-www-iad-wodtemfr,envoy-edge-cpt-csokgekp
+      Content-Length:
+      - '184'
+      X-Envoy-Upstream-Service-Time:
+      - '465'
+      X-Backend:
+      - api_normal
+      X-Server:
+      - slack-www-hhvm-api-iad-8tje6kqg8wkb
+      X-Slack-Shared-Secret-Outcome:
+      - no-match
+      X-Edge-Backend:
+      - envoy-www
+      Timing-Allow-Origin:
+      - "*"
+      Alt-Svc:
+      - h3=":443"; ma=2592000, h3-29=":443"; ma=2592000, quic=":443"; ma=2592000
+      X-Slack-Edge-Shared-Secret-Outcome:
+      - no-match
+    body:
+      encoding: ASCII-8BIT
+      string: '{"ok":true,"url":"https:\/\/anywaye.slack.com\/","team":"Anywaye","user":"anywaye","team_id":"T09SL065DEW","user_id":"U0B496AF1Q8","bot_id":"B0B3CR6UUNS","is_enterprise_install":false}'
+  recorded_at: Tue, 09 Jun 2026 21:17:02 GMT
+recorded_with: VCR 6.4.0
