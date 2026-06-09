@@ -2,6 +2,9 @@ source "https://rubygems.org"
 
 gemspec
 
+gem "ask-auth", path: "../ask-auth"
+gem "slack-ruby-client", "~> 3.1"
+
 group :test do
   gem "minitest", "~> 5.25"
   gem "mocha", "~> 3.1"
