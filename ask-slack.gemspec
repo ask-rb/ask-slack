@@ -2,11 +2,11 @@ require_relative "lib/ask/slack/version"
 
 Gem::Specification.new do |spec|
   spec.name = "ask-slack"
-  spec.version = Ask::slack::VERSION
+  spec.version = Ask::Slack::VERSION
   spec.authors = ["Kaka Ruto"]
   spec.email = ["kaka@myrrlabs.com"]
 
-  spec.summary = "slack service context for the ask-rb ecosystem"
+  spec.summary = "Slack service context for the ask-rb ecosystem"
   spec.description = "Provides authenticated client helper, context metadata, and error guide for AI agents."
   spec.homepage = "https://github.com/ask-rb/ask-slack"
   spec.license = "MIT"
