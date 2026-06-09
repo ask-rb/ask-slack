@@ -1,8 +1,8 @@
-# ask-slack — Uslack Service Context
+# ask-slack — Slack Service Context
 
 ## Purpose
 
-Service context gem for Uslack. Provides three files:
+Service context gem for the Slack API. Provides three files:
 - `context.rb` — metadata for the system prompt (API docs, auth instructions, quick-start code snippets)
 - `client.rb` — authenticated API client helper
 - `error_guide.rb` — structured error knowledge for agents
@@ -13,7 +13,7 @@ No tool classes. The agent reads the context from the system prompt, writes Ruby
 
 - **Runtime:**
   - `ask-auth` (for `Ask::Auth.resolve(:service_token)`)
-  - `Uslack` API client gem (e.g., `slack-ruby-client`, `notion-ruby`, `linear-ruby`)
+  - API client gem (e.g., `slack-ruby-client`, `notion-ruby`, `linear-ruby`)
 - **Build/test:** minitest, mocha, rake, vcr, webmock
 - **This gem MUST wait until `ask-auth` is built, tested, and released.** The client helper depends on `Ask::Auth.resolve`.
 
@@ -40,7 +40,7 @@ No tool classes. The agent reads the context from the system prompt, writes Ruby
 Define constants following the `ask-github` pattern: `DESCRIPTION`, `DOCS_URL`, `OPENAPI_URL` (if available), `AUTH_NAME`, `AUTH_HOW`, `GEM_NAME`, `GEM_DOCS`, `QUICK_START`.
 
 ### 4. Build client.rb
-- `Ask::Uslack.client` returns an authenticated client
+- `Ask::Slack.client` returns an authenticated client
 - Resolves token via `Ask::Auth.resolve(:service_token)`
 - Raises `Ask::Auth::MissingCredential` with instructions if no token found
 - Configures sensible defaults (pagination, timeout, user agent)
@@ -58,7 +58,7 @@ Define constants following the `ask-github` pattern: `DESCRIPTION`, `DOCS_URL`, 
 - Test error guide maps are accurate
 
 ### 7. README
-- Quick start: `Ask::Uslack.client` and writing agent code
+- Quick start: `Ask::Slack.client` and writing agent code
 - Auth setup instructions
 - Common usage patterns
 - How to develop and test locally

@@ -18,8 +18,12 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "ask-auth", "~> 0.1"
   spec.add_dependency "slack-ruby-client", "~> 3.1"
+  spec.add_dependency "faraday-retry", "~> 2.4"
 
   spec.add_development_dependency "minitest", "~> 5.25"
   spec.add_development_dependency "mocha", "~> 3.1"
   spec.add_development_dependency "rake", "~> 13.0"
+  spec.add_development_dependency "vcr", "~> 6.3"
+  spec.add_development_dependency "webmock", "~> 3.23"
+  spec.add_development_dependency "simplecov", "~> 0.22"
 end
