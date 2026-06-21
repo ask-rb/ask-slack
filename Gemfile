@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 gemspec
 
-gem "ask-auth", path: "../ask-auth"
+gem "ask-auth", "~> 0.1"
 gem "slack-ruby-client", "~> 3.1"
 gem "faraday-retry", "~> 2.4"
 
