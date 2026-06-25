@@ -1,3 +1,7 @@
+## [0.1.3] - 2026-06-25
+
+### Changed
+- Gemspec validation test. Infrastructure: rubocop, overcommit, bin/setup, CI matrix. VCR rake tasks.
 # Changelog
 
 ## [0.1.2] - 2026-06-21

@@ -8,3 +8,5 @@ Rake::TestTask.new(:test) do |t|
 end
 
 task default: :test
+
+Dir[File.expand_path("lib/tasks/*.rake", __dir__)].each { |f| import f }
