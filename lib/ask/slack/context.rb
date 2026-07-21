@@ -8,8 +8,9 @@ module Ask
     # Base URL for Slack Web API methods.
     DOCS_URL = "https://api.slack.com/methods"
 
-    # URL for the Slack OpenAPI specification.
-    OPENAPI_URL = "https://api.slack.com/specs/openapi"
+    # Slack no longer serves an OpenAPI spec at a stable URL.
+    # The API methods reference is at DOCS_URL instead.
+    # OPENAPI_URL was removed because the spec redirects to a 404 page.
 
     # Credential name used with Ask::Auth.resolve.
     AUTH_NAME = :slack_token

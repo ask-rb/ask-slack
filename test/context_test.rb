@@ -11,8 +11,8 @@ class ContextTest < Minitest::Test
     assert Ask::Slack::DOCS_URL.start_with?("https://api.slack.com")
   end
 
-  def test_openapi_url_is_defined
-    assert Ask::Slack::OPENAPI_URL.start_with?("https://api.slack.com")
+  def test_openapi_url_removed
+    refute Ask::Slack.const_defined?(:OPENAPI_URL), "OPENAPI_URL was removed because Slack no longer serves the spec"
   end
 
   def test_auth_name_is_slack_token
