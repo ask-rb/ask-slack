@@ -10,7 +10,7 @@ class ClientTest < Minitest::Test
   def test_client_returns_slack_web_client_when_token_available
     token = "xoxb-test-token-12345"
     Ask::Auth.configure do |config|
-      config.providers = [->(name, user: nil) { token if name == "slack_token" }]
+      config.providers = [->(name, user: nil) { token if name.to_s == "slack_token" }]
     end
 
     client = Ask::Slack.client
@@ -29,7 +29,7 @@ class ClientTest < Minitest::Test
   def test_client_raises_invalid_credential_on_invalid_auth
     token = "bad_token"
     Ask::Auth.configure do |config|
-      config.providers = [->(name, user: nil) { token if name == "slack_token" }]
+      config.providers = [->(name, user: nil) { token if name.to_s == "slack_token" }]
     end
 
     Slack::Web::Client.any_instance.stubs(:channels_list).raises(
@@ -42,7 +42,7 @@ class ClientTest < Minitest::Test
   def test_client_raises_invalid_credential_on_not_authed
     token = "bad_token"
     Ask::Auth.configure do |config|
-      config.providers = [->(name, user: nil) { token if name == "slack_token" }]
+      config.providers = [->(name, user: nil) { token if name.to_s == "slack_token" }]
     end
 
     Slack::Web::Client.any_instance.stubs(:channels_list).raises(
@@ -55,7 +55,7 @@ class ClientTest < Minitest::Test
   def test_client_raises_invalid_credential_on_token_revoked
     token = "revoked_token"
     Ask::Auth.configure do |config|
-      config.providers = [->(name, user: nil) { token if name == "slack_token" }]
+      config.providers = [->(name, user: nil) { token if name.to_s == "slack_token" }]
     end
 
     Slack::Web::Client.any_instance.stubs(:channels_list).raises(

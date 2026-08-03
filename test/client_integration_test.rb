@@ -12,7 +12,7 @@ class ClientIntegrationTest < Minitest::Test
   def test_client_returns_slack_web_client_when_token_available
     token = "xoxb-test-token-12345"
     Ask::Auth.configure do |config|
-      config.providers = [->(name, user: nil) { token if name == "slack_token" }]
+      config.providers = [->(name, user: nil) { token if name.to_s == "slack_token" }]
     end
 
     client = Ask::Slack.client(**NO_DELAY)
@@ -31,7 +31,7 @@ class ClientIntegrationTest < Minitest::Test
   def test_client_raises_invalid_credential_on_network_error
     token = "xoxb-test-token"
     Ask::Auth.configure do |config|
-      config.providers = [->(name, user: nil) { token if name == "slack_token" }]
+      config.providers = [->(name, user: nil) { token if name.to_s == "slack_token" }]
     end
 
     ::Slack::Web::Client.any_instance.stubs(:users_list).raises(
@@ -46,7 +46,7 @@ class ClientIntegrationTest < Minitest::Test
   def test_client_handles_timeout_error
     token = "xoxb-test-token"
     Ask::Auth.configure do |config|
-      config.providers = [->(name, user: nil) { token if name == "slack_token" }]
+      config.providers = [->(name, user: nil) { token if name.to_s == "slack_token" }]
     end
 
     ::Slack::Web::Client.any_instance.stubs(:users_list).raises(
@@ -61,7 +61,7 @@ class ClientIntegrationTest < Minitest::Test
   def test_client_retries_exhaust_all_attempts
     token = "xoxb-test-token"
     Ask::Auth.configure do |config|
-      config.providers = [->(name, user: nil) { token if name == "slack_token" }]
+      config.providers = [->(name, user: nil) { token if name.to_s == "slack_token" }]
     end
 
     # Raised every time — all 1 initial + 3 retries will fail
@@ -77,7 +77,7 @@ class ClientIntegrationTest < Minitest::Test
   def test_client_timeouts_configured
     token = "xoxb-test-token"
     Ask::Auth.configure do |config|
-      config.providers = [->(name, user: nil) { token if name == "slack_token" }]
+      config.providers = [->(name, user: nil) { token if name.to_s == "slack_token" }]
     end
 
     client = Ask::Slack.client(**NO_DELAY)
