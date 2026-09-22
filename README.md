@@ -2,6 +2,13 @@
 
 [![Gem Version](https://badge.fury.io/rb/ask-slack.svg)](https://badge.fury.io/rb/ask-slack)
 
+> **DEPRECATED:** The `ask-slack` gem is deprecated in favor of Slack's
+> [official MCP server](https://docs.slack.dev/ai/slack-mcp-server/)
+> (endpoint: `https://mcp.slack.com/mcp`). Existing installations may continue
+> to work, but this repository will receive no further feature development.
+> For setup and capabilities, use the
+> [official MCP source](https://docs.slack.dev/ai/slack-mcp-server/).
+
 Slack service context for AI agents in the ask-rb ecosystem. It provides an
 authenticated Slack Web API client built on slack-ruby-client, metadata
 constants for system prompts, and a structured error guide for common Slack

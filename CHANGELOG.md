@@ -1,3 +1,12 @@
+## Deprecated - 2026-09-22
+
+### Deprecated
+
+- The `ask-slack` gem is deprecated in favor of Slack's official MCP server:
+  https://docs.slack.dev/ai/slack-mcp-server/ (endpoint: `https://mcp.slack.com/mcp`).
+  Existing installations may continue to work, but no further feature development
+  will occur in this repository.
+
 ## [0.1.3] - 2026-06-25
 
 ### Changed
